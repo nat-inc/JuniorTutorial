@@ -1,4 +1,4 @@
-##Software おすすめ
+## Software おすすめ
 
 ### Common
 ターミナルツール[iTerm2](https://iterm2.com)
