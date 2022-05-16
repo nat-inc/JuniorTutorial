@@ -22,6 +22,8 @@
 
 まず、URLからアクセスできるシンプルなウェブサイトを作成しましゅう。
 
+### 1. ウェブサイトの作成すること
+
 HTML，CSS，JavaScript（jQuery）を学びます。
 
 おすすめの文章：
@@ -34,6 +36,8 @@ https://snome.jp/programming/jquery1/
 
 [練習](Web/test.md)
 
+### 2. サーバー構築
+LinuxでNginx使われてサーバーを構築する。
 
 # Coming Soon
 <!-- 
