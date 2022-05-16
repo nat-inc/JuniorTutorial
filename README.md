@@ -20,6 +20,21 @@
 
 ## 第一章　入門
 
+まず、URLからアクセスできるシンプルなウェブサイトを作成しましゅう。
+
+HTML，CSS，JavaScript（jQuery）を学びます。
+
+おすすめの文章：
+
+https://snome.jp/engineer/html1/
+
+https://snome.jp/engineer/css1/
+
+https://snome.jp/programming/jquery1/
+
+[練習](Web/test.md)
+
+
 # Coming Soon
 <!-- 
 ### プログラミング言語の基礎
