@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+     <meta charset="utf-8">
+     <link rel="stylesheet" href="form.css">
+     <title></title>
+  </head>
+
+
+  <body>
+    <div class="container">
+      <form id="form" class="form">
+        <p id="chk1">姓：<input id ="name1" name="Name1" placeholder="例：山田"></p>
+        <p id="chk2">名：<input id ="name2" name="Name2" placeholder="例：太郎"></p>
+        <p id="chk3">性別：<input type="radio" name="formGender" id="radio1" value="女性">女性
+        <input type="radio" name="formGender" id="radio2" value="男性">男性</p>
+        <p id="chk4">メールアドレス：<input id ="email" name="Mail" placeholder="例：aaa.co.jp"></p>
+        <p id="chk5">電話番号：<input id ="tel" name="Tel" placeholder="例：090-1234-5678"></p>
+        <br>※ハイフンを入れてください。
+        <button type="submit" class="btn-submit">追加</button>
+        <button type="button" class="btn-update">更新</button>
+        <button type="button" class="btn-search">検索</button>
+        <button type="button" class="btn-back">戻る</button>
+    
+      </form>
+    </div>
+
+
+    <table id ="tbl">
+      <tr> <th>姓</th><th>名</th><th>性別</th><th>メールアドレス</th><th>電話番号</th><th>削除</th><th>編集</th></tr>
+    </table>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js></script>
+    <script src="form1-1.js"></script>
+  </body>
+</html>
