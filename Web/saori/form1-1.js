@@ -4,43 +4,54 @@ $(function(){
     var dataIndex = 0;
     const datas = [];
 
+    $(function(){
     $('#form').validate({
         errorElement:'p',
         rules:{
             Name1: {
                 required: true,
+                pattern:/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/i
             },
             Name2: {
                 required: true,
+                pattern:/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/i
             },
             formGender: {
                 required: true,
             },
             Mail: {
                 required: true,
+                pattern:/^[a-zA-Z0-9]{1}[a-zA-Z0-9.-_]*@{1}[a-zA-Z0-9.-_]+\.[a-zA-Z0-9]+$/i
             },
              Tel: {
                 required: true,
+                pattern:/^\d{2,3}-\d{3,4}-\d{3,4}$/i
             },
         },
 
         messages:{
             Name1:{
                 required: "姓を入力してください",
+                pattern:"全角で入力してください"
             },
             Name2:{
                 required: "名を入力してください",
+                pattern:"全角で入力してください"
             },
             formGender: {
                 required: "性別にチェックを入れてください",
             },
             Mail: {
                 required: "メールアドレスを入力してください",
+                pattern:"メールアドレスの形式で入力してください"
             },
              Tel: {
                 required: "電話番号を入力してください",
+                pattern:"半角(ハイフン付き)で入力してください"
             },
         },
+
+    
 
         errorPlacement: function(error, element){
            if(element.attr('name') == 'formGender'){
@@ -57,7 +68,13 @@ $(function(){
                return true;
            }
 
-           }
+           },
+
+        
+        success:function(error, element){
+            $(error).remove();
+        },
+    });
     });
 
     $('input[type="radio"]').on('click', function() {
@@ -80,16 +97,12 @@ $(function(){
             tel:inputTel
         };
 
-        if(errorCheck(inputData)==true){
             datas.push(inputData);
             addDataView(inputData,false); //（inputData,false?)
             dataIndex = dataIndex + 1;
             console.log(datas);
-            return false;
+            return true;
 
-         }else{
-            return false;
-        };
 
     });
 
@@ -108,33 +121,103 @@ $(function(){
     }
 
 
-    function errorCheck(inputData){
-        if(!(inputData.sei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/)){
-            alert("全角で入力してください");
-            return false;
-        }else if(inputData.sei == ""){
-            return false;
-        }else if(!(inputData.mei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/)){
-            alert("全角で入力してください");
-            return false;
-        }else if(inputData.mei == ""){
-            return false;
-        }else if(inputData.sex != "男性" && inputData.sex != "女性"){
-            return false;
-        }else if(!(inputData.mail).match(/^[a-zA-Z0-9]{1}[a-zA-Z0-9.-_]*@{1}[a-zA-Z0-9.-_]+\.[a-zA-Z0-9]+$/) && inputData.mail != ""){
-            alert("メールアドレスの形式で入力してください");    
-            return false;
-        }else if(inputData.mail == ""){
-            return false;
-        }else if(!(inputData.tel).match(/^\d{2,3}-\d{3,4}-\d{3,4}$/) && inputData.tel != ""){
-            alert("半角(ハイフン付き)で入力してください");
-            return false;
-        }else if(inputData.tel == ""){
-            return false;
-        }else{
-            return true;
-        }
-    }
+    $(function(){
+        $('#form').validate({
+            errorElement:'p',
+            rules:{
+                Name1: {
+                    required: true,
+                    pattern:/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/i
+                },
+                Name2: {
+                    required: true,
+                    pattern:/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/i
+                },
+                formGender: {
+                    required: true,
+                },
+                Mail: {
+                    required: true,
+                    pattern:/^[a-zA-Z0-9]{1}[a-zA-Z0-9.-_]*@{1}[a-zA-Z0-9.-_]+\.[a-zA-Z0-9]+$/i
+                },
+                 Tel: {
+                    required: true,
+                    pattern:/^\d{2,3}-\d{3,4}-\d{3,4}$/i
+                },
+            },
+    
+            messages:{
+                Name1:{
+                    required: "姓を入力してください",
+                    pattern:"全角で入力してください"
+                },
+                Name2:{
+                    required: "名を入力してください",
+                    pattern:"全角で入力してください"
+                },
+                formGender: {
+                    required: "性別にチェックを入れてください",
+                },
+                Mail: {
+                    required: "メールアドレスを入力してください",
+                    pattern:"メールアドレスの形式で入力してください"
+                },
+                 Tel: {
+                    required: "電話番号を入力してください",
+                    pattern:"半角(ハイフン付き)で入力してください"
+                },
+            },
+    
+        
+    
+            errorPlacement: function(error, element){
+               if(element.attr('name') == 'formGender'){
+                   error.insertAfter('#chk3')
+               }else if(element.attr('name') =='Name1') {
+                   error.insertAfter('#chk1')
+               }else if(element.attr('name') =='Name2') {
+                   error.insertAfter('#chk2')   
+               }else if(element.attr('name') =='Mail'){
+                   error.insertAfter('#chk4')
+               }else if(element.attr('name') =='Tel'){
+                   error.insertAfter('#chk5')
+               }else{
+                   return true;
+               }
+    
+               }
+
+               
+        });
+        });
+
+    // function errorCheck(inputData){
+    //     if(!(inputData.sei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/)){
+    //         alert("全角で入力してください");
+    //         return false;
+    //     }else if(inputData.sei == ""){
+    //         return false;
+    //     }else if(!(inputData.mei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/)){
+    //         alert("全角で入力してください");
+    //         return false;
+    //     }else if(inputData.mei == ""){
+    //         return false;
+    //     }else if(inputData.sex != "男性" && inputData.sex != "女性"){
+    //         return false;
+    //     }else if(!(inputData.mail).match(/^[a-zA-Z0-9]{1}[a-zA-Z0-9.-_]*@{1}[a-zA-Z0-9.-_]+\.[a-zA-Z0-9]+$/) && inputData.mail != ""){
+    //         alert("メールアドレスの形式で入力してください");    
+    //         return false;
+    //     }else if(inputData.mail == ""){
+    //         return false;
+    //     }else if(!(inputData.tel).match(/^\d{2,3}-\d{3,4}-\d{3,4}$/) && inputData.tel != ""){
+    //         alert("半角(ハイフン付き)で入力してください");
+    //         return false;
+    //     }else if(inputData.tel == ""){
+    //         return false;
+    //     }else{
+    //         return true;
+    //     }
+    // }
 
     //CHK
     $("#tbl").on('click','#delete',function(){
