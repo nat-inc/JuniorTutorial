@@ -39,6 +39,38 @@ https://snome.jp/programming/jquery1/
 ### 2. サーバー構築
 LinuxでNginx使われてサーバーを構築する。
 
+
+## 第二章 Swift
+
+一つのメソッドを達成する、このメソッドは一つ**Int**形のパラメータである、**String**形のArrayを戻る。
+
+**String**形のArrayの中は**1**から**Int**形のパラメータまでの**String**を置いて。
+
+ただし、
+
+3の倍数の時、**Fizz**に替えて、
+
+5の倍数の時、**Buzz**に替えて、
+
+3と5の倍数の時、**FizzBuzz**に替えて。
+
+
+Example 1:
+
+```
+Input: n = 3
+Output: ["1","2","Fizz"]
+```
+Example 2:
+```
+Input: n = 5
+Output: ["1","2","Fizz","4","Buzz"]
+```
+Example 3:
+```
+Input: n = 15
+Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+```
 # Coming Soon
 <!-- 
 ### プログラミング言語の基礎
