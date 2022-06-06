@@ -1,4 +1,27 @@
 
+#matchChk1 {
+    display: none;
+}
+
+#matchChk2 {
+    display: none;
+}
+
+#matchChk3 {
+    display: none;
+}
+
+#matchChk4 {
+    display: none;
+}
+
+#matchChk5 {
+    display: none;
+}
+
+
+
+
 #form{
     width:600px;
     margin:10px;
@@ -61,4 +84,4 @@ table td:nth-of-type(7){
 }
 
 
-p.error{color:red};
+

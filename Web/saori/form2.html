@@ -10,12 +10,17 @@
   <body>
     <div class="container">
       <form id="form" class="form">
-        <p id="chk1">姓：<input id ="name1" name="Name1" placeholder="例：山田"></p>
-        <p id="chk2">名：<input id ="name2" name="Name2" placeholder="例：太郎"></p>
-        <p id="chk3">性別：<input type="radio" name="formGender" id="radio1" value="女性">女性
+        <p>姓：<input id ="name1" name="Name1" placeholder="例：山田"></p>
+        <p id="matchChk1">全角で入力してください</p>
+        <p>名：<input id ="name2" name="Name2" placeholder="例：太郎"></p>
+        <p id="matchChk2">全角で入力してください</p>
+        <p>性別：<input type="radio" name="formGender" id="radio1" value="女性">女性
         <input type="radio" name="formGender" id="radio2" value="男性">男性</p>
-        <p id="chk4">メールアドレス：<input id ="email" name="Mail" placeholder="例：aaa.co.jp"></p>
-        <p id="chk5">電話番号：<input id ="tel" name="Tel" placeholder="例：090-1234-5678"></p>
+        <p id="matchChk3">性別にチェックを入れてください</p>
+        <p>メールアドレス：<input id ="email" name="Mail" placeholder="例：aaa.co.jp"></p>
+        <p id="matchChk4">メールアドレスの形式で入力してください</p>
+        <p>電話番号：<input id ="tel" name="Tel" placeholder="例：090-1234-5678"></p>
+        <p id="matchChk5">電話番号の形式で入力してください</p>
         <br>※ハイフンを入れてください。
         <button type="submit" class="btn-submit">追加</button>
         <button type="button" class="btn-update">更新</button>
@@ -33,7 +38,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src=https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="form1-1.js"></script>
   </body>
 </html>
