@@ -51,44 +51,22 @@ $(function(){
     }
 
     function errorCheck(inputData){
-        var flag = 0;
+        let checkErrors = 
+        [!(inputData.sei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/) || inputData.sei == "", 
+        !(inputData.mei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/) || inputData.mei == "",
+        inputData.sex != "男性" && inputData.sex != "女性",
+        !(inputData.mail).match(/^[a-zA-Z0-9]{1}[a-zA-Z0-9.-_]*@{1}[a-zA-Z0-9.-_]+\.[a-zA-Z0-9]+$/) || inputData.mail == "",
+        !(inputData.tel).match(/^\d{2,3}-\d{3,4}-\d{3,4}$/) || inputData.tel == ""];
 
-        if(!(inputData.sei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/) || inputData.sei == ""){
-            flag = 1;
-            $('#matchChk1').show();
-        }else{
-            $('#matchChk1').hide();
-        }
-  
-        if(!(inputData.mei).match(/^[ぁ-んァ-ヶ亜-熙纊-黑]*$/) || inputData.mei == ""){
-            flag = 1;
-            $('#matchChk2').show();
-        }else{
-            $('#matchChk2').hide();
-        }
-
-        if(inputData.sex != "男性" && inputData.sex != "女性"){
-            flag = 1;
-            $('#matchChk3').show();
-        }else{
-            $('#matchChk3').hide();
-        }
+        checkErrors.forEach(function(element, index){
+            if (element) {
+                $('#matchChk' + (index + 1)).show();
+            } else {
+                $('#matchChk' + (index + 1)).hide();
+            }
+        });
         
-        if(!(inputData.mail).match(/^[a-zA-Z0-9]{1}[a-zA-Z0-9.-_]*@{1}[a-zA-Z0-9.-_]+\.[a-zA-Z0-9]+$/) || inputData.mail == ""){
-            flag = 1;
-            $('#matchChk4').show();
-        }else{
-            $('#matchChk4').hide();
-        }
-        
-        if(!(inputData.tel).match(/^\d{2,3}-\d{3,4}-\d{3,4}$/) || inputData.tel == ""){
-            flag = 1;
-            $('#matchChk5').show();
-        }else{
-            $('#matchChk5').hide();
-        }
-
-        if(flag){
+        if(checkErrors.indexOf(true) > -1){
             return false;
         }else{
             return true;
