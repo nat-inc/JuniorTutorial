@@ -13,8 +13,11 @@ for num in box{
     if countA > 0{
         countB.append(countA)
     }
-
-    return countB.max() ?? <#default value#>!
+    
+//    var min = numArray[0]
+//    var max = numArray[0]
+//    if item
+    return countB.max() ?? 0
 }
 
 
