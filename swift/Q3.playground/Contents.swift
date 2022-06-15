@@ -26,7 +26,7 @@ for num in box{
 }
 }
 
-print(countOfRepeat1(box:[1,0,1,1,0,1]))
+print(countOfRepeat1(box:[1,0,1,1,1,0,1,1,0,1]))
 //count1,2を比べて0が来たときに小さい方をリセット、それを繰り返す
 
 

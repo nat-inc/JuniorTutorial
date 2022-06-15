@@ -1,5 +1,4 @@
 //var appendToCount = "A"を使わない方法
-
 func countOfRepeat1(box:[Int]) -> Int{
 var countA = 0
 var countB = [Int]()
