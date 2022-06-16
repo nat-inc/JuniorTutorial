@@ -123,6 +123,36 @@ Input: nums = [1,0,1,1,0,0,0,1,1,1,1]
 Output: 4
 ```
 
+#### 4
+一つのメソッドを達成する、このメソッドは一つ**String**形の**Array**パラメータである、**String**形の**Array**を戻る。
+**String**形の**Array**を戻る値はパラメータの中で米国のキーボードで同じ行の文字を使用して組み合わせできる単語。
+
+米国のキーボードの中：
+
+最初の行は文字： "qwertyuiop"。
+第二行は文字 "asdfghjkl"。
+第三行は文字 "zxcvbnm"。
+
+![keyboard](https://user-images.githubusercontent.com/92193175/173963576-4afdb182-fe58-44fb-b5be-5e0534700c9e.png)
+
+Example 1:
+
+```
+Input: words = ["Hello","Alaska","Dad","Peace"]
+Output: ["Alaska","Dad"]
+```
+Example 2:
+```
+Input: words = ["omk"]
+Output: []
+```
+Example 3:
+```
+Input: words = ["adsdf","sfd"]
+Output: ["adsdf","sfd"]
+```
+
+
 # Coming Soon
 <!-- 
 ### プログラミング言語の基礎
@@ -130,6 +160,7 @@ Output: 4
 --
 
 ### DB設計
+
 
 --
 
