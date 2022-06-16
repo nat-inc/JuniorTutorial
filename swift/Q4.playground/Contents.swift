@@ -8,27 +8,25 @@ for word in input{
     var row1con = false
     var row2con = false
     var row3con = false
-for character in word{
-    if row1.contains(character){
-        row1con = true
-    }else if row2.contains(character){
-        row2con = true
-    }else if row3.contains(character){
-        row3con = true
-    }
-}
-   
-    if row1con == true && row2con == false && row3con == false{
-        array.append(word)
-    }
-    if row2con == true && row1con == false && row3con == false{
-        array.append(word)
-    }
-    if row3con == true && row1con == false && row2con == false{
-        array.append(word)
-    }
+        for character in word{
+            if row1.contains(character){
+                row1con = true
+            }else if row2.contains(character){
+                row2con = true
+            }else if row3.contains(character){
+                row3con = true
+            }
+        }
+        if row1con == true && row2con == false && row3con == false{
+            array.append(word)
+        }
+        if row2con == true && row1con == false && row3con == false{
+            array.append(word)
+        }
+        if row3con == true && row1con == false && row2con == false{
+            array.append(word)
+        }
     }
     return(array)
 }
-
-print(rowCheck(input:["Hello","Alaska","Dad","Peace"]))
+print(rowCheck(input:["Alaska","Peace","Dad"]))
