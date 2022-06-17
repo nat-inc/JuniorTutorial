@@ -152,6 +152,27 @@ Input: words = ["adsdf","sfd"]
 Output: ["adsdf","sfd"]
 ```
 
+#### 5
+
+一つのメソッドを達成する、このメソッドは一つ**String**形のパラメータである、**String**を戻る。
+**String**形戻る値はパラメータの内の各単語の文字の順序を逆にする。
+
+Example 1:
+
+```
+Input：s = "Let's take LeetCode contest"
+Output："s'teL ekat edoCteeL tsetnoc"
+```
+Example 2:
+```
+Input: s = "God Ding"
+Output: "doG gniD"
+```
+Example 3:
+```
+Input: s = "scanat"
+Output: "tanacs"
+```
 
 # Coming Soon
 <!-- 
