@@ -5,25 +5,19 @@ let row3:[Character] = ["z","x","c","v","b","n","m"]
 var array = [String]()
 
 for word in input{
-    var row1con = false
-    var row2con = false
-    var row3con = false
+    var row1con = 0
+    var row2con = 0
+    var row3con = 0
         for character in word{
             if row1.contains(character){
-                row1con = true
+                row1con = 1
             }else if row2.contains(character){
-                row2con = true
+                row2con = 1
             }else if row3.contains(character){
-                row3con = true
+                row3con = 1
             }
         }
-        if row1con == true && row2con == false && row3con == false{
-            array.append(word)
-        }
-        if row2con == true && row1con == false && row3con == false{
-            array.append(word)
-        }
-        if row3con == true && row1con == false && row2con == false{
+        if row1con + row2con + row3con == 1{
             array.append(word)
         }
     }
