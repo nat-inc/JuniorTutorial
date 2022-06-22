@@ -16,6 +16,8 @@ func test(str: String) -> Int {
     return -1
 }
 
-print(test(str:"scanatscan"))
+print(test(str:"book"))
 
 
+    
+    
