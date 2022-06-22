@@ -174,6 +174,26 @@ Input: s = "scanat"
 Output: "tanacs"
 ```
 
+#### 6
+一つのメソッドを達成する、このメソッドは二つ**Int**形の**Array**パラメータである、**Int**形の**Array**を戻る。
+**Int**形の**Array**戻る値は二つパラメータ両方であるの値。
+
+Example 1:
+```
+Input: nums1 = [1,2,2,1], nums2 = [2,2]
+Output: [2]
+```
+Example 2:
+```
+Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+Output: [9,4]
+```
+Example 3:
+```
+Input: nums1 = [4,9,6], nums2 = [10,11,19]
+Output: []
+```
+
 # Coming Soon
 <!-- 
 ### プログラミング言語の基礎
