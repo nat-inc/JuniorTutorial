@@ -194,6 +194,31 @@ Input: nums1 = [4,9,6], nums2 = [10,11,19]
 Output: []
 ```
 
+#### 7
+一つのメソッドを達成する、このメソッドは二つ**String**形パラメータである、**Int**形を戻る。
+
+もし、第一パラメータの中で第二パラメータである、
+**Int**形戻る値は第一パラメータで第二パラメータのindex。
+もし、第一パラメータの中で第二パラメータでない、
+**Int**形戻る値は**-1**
+
+Example 1:
+```
+Input: para1 = "hello", para2 = "ll"
+Output: 2
+```
+Example 2:
+```
+Input: para1 = "scanat", para2 = "nat"
+Output: 3
+```
+Example 3:
+```
+Input: para1 = "aaaaa", para2 = "bba"
+Output: -1
+```
+
+
 # Coming Soon
 <!-- 
 ### プログラミング言語の基礎
