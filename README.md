@@ -233,13 +233,13 @@ Output: true
 ```
 Example 2:
 ```
-Input: pattern = "abba", s = "dog cat cat fish"
-Output: false
+Input: pattern = "mnnm", s = "iOS Android Android iOS"
+Output: true
 ```
 Example 3:
 ```
-Input: pattern = "abcd", s = "dog cat fish bird"
-Output: true
+Input: pattern = "vxvv", s = "scan nat fish bird"
+Output: false
 ```
 
 
