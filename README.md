@@ -238,8 +238,8 @@ Output: false
 ```
 Example 3:
 ```
-Input: pattern = "aaaa", s = "dog cat cat dog"
-Output: false
+Input: pattern = "abcd", s = "dog cat fish bird"
+Output: true
 ```
 
 
