@@ -218,6 +218,30 @@ Input: para1 = "aaaaa", para2 = "bba"
 Output: -1
 ```
 
+#### 8
+一つのメソッドを達成する、このメソッドは二つ**String**形パラメータである、**Bool**形を戻る。
+
+第一パラメータはパターン、第二パラメータは文字列
+
+パターンと文字列が与えられた場合、trueを戻る、それ以外はfalseを戻る。
+
+
+Example 1:
+```
+Input: pattern = "abba", s = "dog cat cat dog"
+Output: true
+```
+Example 2:
+```
+Input: pattern = "abba", s = "dog cat cat fish"
+Output: false
+```
+Example 3:
+```
+Input: pattern = "abcd", s = "dog cat fish bird"
+Output: true
+```
+
 
 # Coming Soon
 <!-- 
