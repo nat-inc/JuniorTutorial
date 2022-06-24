@@ -1,21 +1,18 @@
 import UIKit
 
 func indexOfContains(para1:String, para2:String) ->Int{
-    var Output:Int? = nil
     if para1.contains(para2){
-        let firstChar = para2[para2.startIndex]
-        for (index,char) in para1.enumerated(){
-            if char == firstChar{
-                if Output == nil{
-                    Output = index
-                }
+        for index1 in 0..<para1.count-para2.count + 1{
+            let start = para1.index(para1.startIndex, offsetBy: index1)
+            let end = para1.index(para1.startIndex, offsetBy: index1 + para2.count - 1)
+            let str = para1[start...end]
+            if str == para2{
+                return index1
             }
         }
-    }else {
-        return -1
     }
-            return(Output!)
+    return -1
 }
 
-print(indexOfContains(para1:"scanat",para2:"nat"))
+print(indexOfContains(para1:"scnanat",para2:"nat"))
 
