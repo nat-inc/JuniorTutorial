@@ -49,6 +49,15 @@ let range2 = greeting[end2...start2]
 print(range)
 print(range2)
 
+var fruits1 = ["apple","orange","banana","melon"]
+print(fruits1.firstIndex(of: "banana" ))
+//(of: value)valueのindexを取得
+print(fruits1.firstIndex(where: { $0.contains("app")}))
+//(where:{条件式})で最初にtrueを返したindexを取得
+
+var numbers = [1,2,3,4,5]
+print(numbers.firstIndex(where : { $0 > 3 }))
+//(where:{条件式})で最初にtrueを返したindexを取得
 
 //import UIKit
 //
