@@ -5,26 +5,26 @@ var alphabetOfPattern = [Character:String]()
 let str1 = Array(pattern)
 let split1 = s.split(separator:" ")
 let n = pattern.count
+var result = Int()
 
 for c in 0..<n{
     if !alphabetOfPattern.keys.contains(str1[c]){
         alphabetOfPattern[str1[c]] = "\(split1[c])"
     }else{
         if alphabetOfPattern[str1[c]] == "\(split1[c])"{
-            return true
+            result = 1
+        }else{
+            return false
         }
     }
 }
+    if result == 1{
+        return true
+    }
     return false
 }
 
-print(checkPattern(pattern:"vxvv", s: "scan nat fish bird"))
-
-
-
-
-
-
+print(checkPattern(pattern:"vxvv", s: "scan nat scan bird"))
 
 
 //----------------------------------------memo------------
