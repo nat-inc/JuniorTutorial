@@ -7,7 +7,6 @@ letters.insert("b")
 
 var fruits = Set<String>()
 
-
 print(letters)
 
 var genres:Set = ["Tennis","Soccer","Swim","Basket"]
@@ -58,6 +57,16 @@ print(fruits1.firstIndex(where: { $0.contains("app")}))
 var numbers = [1,2,3,4,5]
 print(numbers.firstIndex(where : { $0 > 3 }))
 //(where:{条件式})で最初にtrueを返したindexを取得
+
+var str = "Hello World"
+var reverse1 = String(str.reversed())
+print(reverse1)
+var split1 = reverse1.split(separator: " ")
+var reverse2 = Array(split1.reversed())
+var join1 = reverse2.joined(separator:" ")
+print(join1)
+
+
 
 //import UIKit
 //
