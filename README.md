@@ -242,6 +242,26 @@ Input: pattern = "vxvv", s = "scan nat fish bird"
 Output: false
 ```
 
+#### 9
+一つのメソッドを達成する、このメソッドは**Array**形パラメータである、**Bool**形を戻る。
+**Array**形パラメータは[[s1、e1]、[s2、e2]、...]（sn <en）の形です、**Array**形パラメータの中で二つだけ**Array**です。
+もし重複する間隔はありません、trueを戻る、それ以外はfalseを戻る。
+
+Example 1:
+```
+Input: [[7,10],[2,4]]
+Output: true
+```
+Example 2:
+```
+Input: [[0,30],[5,10],[15,20]]
+Output: false
+```
+Example 3:
+```
+Input: [[1,4],[5,10],[15,20]]
+Output: true
+```
 
 # Coming Soon
 <!-- 
