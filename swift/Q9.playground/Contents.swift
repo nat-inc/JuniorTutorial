@@ -18,7 +18,7 @@ for i in 0..<n{
     return true
 }
 
-print(checkRange(Input:[[1,4],[5,10],[15,20]]))
+print(checkRange(Input:[[5,10],[15,20]]))
 
 
 
