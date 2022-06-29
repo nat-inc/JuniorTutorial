@@ -263,6 +263,28 @@ Input: [[1,4],[5,10],[15,20]]
 Output: true
 ```
 
+#### 10
+一つのメソッドを達成する、このメソッドは**Int**形の**Array**numsと**Int**のtargetパラメータである、**Array**形を戻る。
+
+もしnumsの中で二つInt足すはtarget同じ、二つIntのindexを戻る。
+
+Example 1:
+```
+Input: nums = [2,7,11,15], target = 9
+Output: [0,1]
+nums[0] = 2, nums[1]=7; 2 + 7 = 9
+```
+Example 2:
+```
+Input: nums = [3,2,4], target = 6
+Output: [1,2]
+```
+Example 3:
+```
+Input: nums = [3,3], target = 6
+Output: [0,1]
+```
+
 # Coming Soon
 <!-- 
 ### プログラミング言語の基礎
