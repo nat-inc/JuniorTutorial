@@ -28,7 +28,10 @@ class CoffeeTableViewCell: UITableViewCell {
     
     let deleteButton:UIButton = {
        let button = UIButton(type: .system)
+        button.backgroundColor = UIColor.lightGray
+        button.layer.cornerRadius = 10.0
         button.setTitle("削除", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
 //        button.frame = CGRect(x: 50, y: 50, width: 50, height: 50) //要らないのかも？
         button.translatesAutoresizingMaskIntoConstraints = false
 
@@ -37,14 +40,15 @@ class CoffeeTableViewCell: UITableViewCell {
     
     let changeButton:UIButton = {
         let button = UIButton(type: .system)
+        button.backgroundColor = UIColor.lightGray
+        button.layer.cornerRadius = 10.0
         button.setTitle("変更", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
 //        button.frame = CGRect(x: 50, y: 50, width: 50, height: 50) //
         button.translatesAutoresizingMaskIntoConstraints = false
        return button
         
     }()
-    
-    
     
     override func awakeFromNib(){
         super.awakeFromNib()
@@ -71,11 +75,11 @@ class CoffeeTableViewCell: UITableViewCell {
         contentLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant:-30).isActive = true
 
         deleteButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 140).isActive = true
-        deleteButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/5).isActive = true
+        deleteButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/7).isActive = true
         deleteButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant:-60).isActive = true
 
         changeButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 200).isActive = true
-        changeButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/5).isActive = true
+        changeButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/7).isActive = true
         changeButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant:-60).isActive = true
     }
 
@@ -87,9 +91,6 @@ class CoffeeTableViewCell: UITableViewCell {
         nameLabel.text = name
         contentLabel.text = content
     }
-
-    
-
 }
 
 

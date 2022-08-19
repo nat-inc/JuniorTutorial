@@ -33,7 +33,7 @@ private var ticketsView: UITableView!
 
 class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
 
-    private var tickets: Array<Human> = []{
+    private var tickets: Array<Human> = [] {
         didSet{
             ticketsView?.reloadData()
         }
@@ -74,11 +74,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         //プロトコルとデリゲートは他で用意されている機能を使うためのもの。
     
         ticketsView.rowHeight = 160
-        
         self.view.addSubview(ticketsView)
         
         //TextField
-        let tWidth: CGFloat = 200
+        let tWidth: CGFloat = 180
         let tHeight: CGFloat = 30
         let posX: CGFloat = (self.view.bounds.width - tWidth)/2
 
@@ -100,20 +99,29 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         
         //Button
         let bPosX: CGFloat = self.view.frame.width / 1.2
-        let bWidth: CGFloat = 200
-        let bHeight: CGFloat = 50
+        let bWidth: CGFloat = 140
+        let bHeight: CGFloat = 30
         
         appendButton = UIButton(type: .system)
         appendButton.frame = CGRect(x: bPosX/2 , y: 170, width: bWidth / 3, height: bHeight)
+        appendButton.backgroundColor = UIColor.lightGray
+        appendButton.layer.cornerRadius = 10.0
         appendButton.setTitle("追加", for: .normal)
+        appendButton.setTitleColor(UIColor.white, for: .normal)
         
         updateButton = UIButton(type: .system)
         updateButton.frame = CGRect(x: bPosX/3 , y: 170, width: bWidth / 3, height: bHeight)
+        updateButton.backgroundColor = UIColor.lightGray
+        updateButton.layer.cornerRadius = 10.0
         updateButton.setTitle("更新", for: .normal)
+        updateButton.setTitleColor(UIColor.white, for: .normal)
         
         searchButton = UIButton(type: .system)
         searchButton.frame = CGRect(x: bPosX/1.5 , y: 170, width: bWidth / 3, height: bHeight)
+        searchButton.backgroundColor = UIColor.lightGray
+        searchButton.layer.cornerRadius = 10.0
         searchButton.setTitle("検索", for: .normal)
+        searchButton.setTitleColor(UIColor.white, for: .normal)
         
         //ボタンにイベントを追加する
         appendButton.addTarget(self, action: #selector(ViewController.onClickAppendButton(sender:)), for: .touchDown)
@@ -124,16 +132,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         searchButton.addTarget(self, action:
             #selector(ViewController.onClickSearchButton(sender:)), for:.touchDown)
         
-        
         self.view.addSubview(appendButton)
         self.view.addSubview(updateButton)
         self.view.addSubview(searchButton)
-        
+    
     }
 
-override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
        super.didReceiveMemoryWarning()
-   }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Num:\(indexPath.row)")
@@ -155,8 +162,10 @@ override func didReceiveMemoryWarning() {
         cell.changeButton.tag = indexPath.row
         //cellと、data（ここでいうtickets）の中のindexを一緒にする
      
-        cell.deleteButton.setTitle("削除：\(indexPath.row)", for: .normal)
-        cell.changeButton.setTitle("変更：\(indexPath.row)", for: .normal)
+        cell.deleteButton.setTitle("削除", for: .normal)
+//        cell.deleteButton.setTitle("削除：\(indexPath.row)", for: .normal)
+        cell.changeButton.setTitle("変更", for: .normal)
+//        cell.changeButton.setTitle("変更：\(indexPath.row)", for: .normal)
         //タイトルをつける
         
         
@@ -231,14 +240,14 @@ override func didReceiveMemoryWarning() {
     }
     
     //ボタンイベント(削除)
-    @objc internal func onClickDeleteButton(sender: UIButton){
+    @objc internal func onClickDeleteButton(sender: UIButton) {
         print(sender.tag)
         tickets.remove(at:sender.tag)
         // sender:tag == cell.deleteButton.tag
     }
     
     //ボタンイベント(変更)
-    @objc internal func onClickChangeButton(sender: UIButton){
+    @objc internal func onClickChangeButton(sender: UIButton) {
         print(sender.tag)
         myNameField.text = "\(tickets[sender.tag].name)"
         myAgeField.text = "\(tickets[sender.tag].age)"
