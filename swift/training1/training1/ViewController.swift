@@ -29,18 +29,6 @@ struct Human{
     var image: String
 }  //Human構造体
 
-//
-//public struct ShareInfoDTO: Codable {
-//  public let fileKey: String
-//  public let shareTime: String
-//  public let shareUser: String
-//  public let fileSize: Int
-//  public let fileSizeStr: String
-//  public let fileName: String
-//  public let shareStatus: String
-//  public let filePath: String
-//}
-
 private var ticketsView: UITableView!
 
 class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
@@ -112,22 +100,11 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         let bHeight: CGFloat = 50
         
         appendButton = UIButton(type: .system)
-//        appendButton.layer.position = CGPoint(x: bPosX, y:140)
-//
         appendButton.frame = CGRect(x: bPosX/2 , y: 170, width: bWidth / 3, height: bHeight)
         appendButton.setTitle("追加", for: .normal)
         
-
-//        deleteButton = UIButton(type: .system)
-//        deleteButton.frame = CGRect(x: bPosX/2, y: 170, width: bWidth / 3, height: bHeight)
-//        deleteButton.setTitle("削除", for: .normal)
-        
-//        appendButton.layer.position = CGPoint(x: bPosX, y:145)
-        
         //ボタンにイベントを追加する
         appendButton.addTarget(self, action: #selector(ViewController.onClickAppendButton(sender:)), for: .touchDown)
-        
-//        deleteButton.addTarget(self, action: #selector(ViewController.onClickDeleteButton(sender:)), for: .touchDown)
         
         self.view.addSubview(appendButton)
 //        self.view.addSubview(deleteButton)
@@ -156,12 +133,16 @@ override func didReceiveMemoryWarning() {
 
         
         cell.deleteButton.tag = indexPath.row
+        cell.changeButton.tag = indexPath.row
         //cellと、data（ここでいうtickets）の中のindexを一緒にする
      
         cell.deleteButton.setTitle("削除\(indexPath.row)", for: .normal)
+        cell.changeButton.setTitle("変更\(indexPath.row)", for: .normal)
         //タイトルをつける
         
+        
         cell.deleteButton.addTarget(self, action: #selector(onClickDeleteButton(sender:)), for: .touchUpInside)
+        cell.changeButton.addTarget(self, action: #selector(onClickChangeButton(sender:)), for: .touchUpInside)
         //イベントをつける
         
         return cell
@@ -186,6 +167,14 @@ override func didReceiveMemoryWarning() {
         print(sender.tag)
         tickets.remove(at:sender.tag)
         
+        // sender:tag == cell.deleteButton.tag
+    }
+    
+    //ボタンイベント(変更)
+    @objc internal func onClickChangeButton(sender: UIButton){
+        print(sender.tag)
+        myNameField.text = "\(tickets[sender.tag].name)"
+        myAgeField.text = "\(tickets[sender.tag].age)"
         // sender:tag == cell.deleteButton.tag
     }
 

@@ -41,7 +41,9 @@ class CoffeeTableViewCell: UITableViewCell {
 //        button.frame = CGRect(x: 50, y: 50, width: 50, height: 50) //
         button.translatesAutoresizingMaskIntoConstraints = false
        return button
+        
     }()
+    
     
     
     override func awakeFromNib(){
