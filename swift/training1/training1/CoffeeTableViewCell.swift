@@ -74,7 +74,7 @@ class CoffeeTableViewCell: UITableViewCell {
         deleteButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/5).isActive = true
         deleteButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant:-60).isActive = true
 
-        changeButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 180).isActive = true
+        changeButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 200).isActive = true
         changeButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1/5).isActive = true
         changeButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant:-60).isActive = true
     }

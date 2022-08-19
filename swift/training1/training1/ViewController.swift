@@ -44,7 +44,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     private var myAgeField: UITextField!
     private var myImageView1: UIImageView!
     private var appendButton: UIButton!
+    private var updateButton: UIButton!
     private var deleteButton: UIButton!
+    
+    var selectedRow:Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,11 +106,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         appendButton.frame = CGRect(x: bPosX/2 , y: 170, width: bWidth / 3, height: bHeight)
         appendButton.setTitle("追加", for: .normal)
         
+        updateButton = UIButton(type: .system)
+        updateButton.frame = CGRect(x: bPosX/3 , y: 170, width: bWidth / 3, height: bHeight)
+        updateButton.setTitle("更新", for: .normal)
+        
         //ボタンにイベントを追加する
         appendButton.addTarget(self, action: #selector(ViewController.onClickAppendButton(sender:)), for: .touchDown)
         
+        updateButton.addTarget(self, action:
+            #selector(ViewController.onClickUpdateButton(sender:)), for:.touchDown)
+        
         self.view.addSubview(appendButton)
-//        self.view.addSubview(deleteButton)
+        self.view.addSubview(updateButton)
         
     }
 
@@ -130,14 +140,13 @@ override func didReceiveMemoryWarning() {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as! CoffeeTableViewCell
         cell.setCell(name: tickets[indexPath.row].name, content:"\(tickets[indexPath.row].age)")
         cell.imageView?.image = UIImage(named: tickets[indexPath.row].image)?.resize(size: CGSize(width: 100, height: 100))
-
         
         cell.deleteButton.tag = indexPath.row
         cell.changeButton.tag = indexPath.row
         //cellと、data（ここでいうtickets）の中のindexを一緒にする
      
-        cell.deleteButton.setTitle("削除\(indexPath.row)", for: .normal)
-        cell.changeButton.setTitle("変更\(indexPath.row)", for: .normal)
+        cell.deleteButton.setTitle("削除：\(indexPath.row)", for: .normal)
+        cell.changeButton.setTitle("変更：\(indexPath.row)", for: .normal)
         //タイトルをつける
         
         
@@ -162,11 +171,20 @@ override func didReceiveMemoryWarning() {
         tickets.append(Human(name:myNameField.text!, age:Int(myAgeField.text!)!, image:"donutAndCoffee.png"))
     }
     
+    //ボタンイベント(更新)
+    @objc internal func onClickUpdateButton(sender: UIButton){
+        print("onClickUpdateButton")
+        print(sender.tag)
+        if selectedRow != nil {
+            tickets[selectedRow!].name = "\(myNameField.text!)"
+            tickets[selectedRow!].age = Int(myAgeField.text!)!
+        }
+    }
+    
     //ボタンイベント(削除)
     @objc internal func onClickDeleteButton(sender: UIButton){
         print(sender.tag)
         tickets.remove(at:sender.tag)
-        
         // sender:tag == cell.deleteButton.tag
     }
     
@@ -175,7 +193,7 @@ override func didReceiveMemoryWarning() {
         print(sender.tag)
         myNameField.text = "\(tickets[sender.tag].name)"
         myAgeField.text = "\(tickets[sender.tag].age)"
-        // sender:tag == cell.deleteButton.tag
+        selectedRow = sender.tag
     }
 
 }
