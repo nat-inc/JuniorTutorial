@@ -46,6 +46,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
     private var appendButton: UIButton!
     private var updateButton: UIButton!
     private var deleteButton: UIButton!
+    private var searchButton: UIButton!
     
     var selectedRow:Int?
     
@@ -110,14 +111,23 @@ class ViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate
         updateButton.frame = CGRect(x: bPosX/3 , y: 170, width: bWidth / 3, height: bHeight)
         updateButton.setTitle("更新", for: .normal)
         
+        searchButton = UIButton(type: .system)
+        searchButton.frame = CGRect(x: bPosX/1.5 , y: 170, width: bWidth / 3, height: bHeight)
+        searchButton.setTitle("検索", for: .normal)
+        
         //ボタンにイベントを追加する
         appendButton.addTarget(self, action: #selector(ViewController.onClickAppendButton(sender:)), for: .touchDown)
         
         updateButton.addTarget(self, action:
             #selector(ViewController.onClickUpdateButton(sender:)), for:.touchDown)
         
+        searchButton.addTarget(self, action:
+            #selector(ViewController.onClickSearchButton(sender:)), for:.touchDown)
+        
+        
         self.view.addSubview(appendButton)
         self.view.addSubview(updateButton)
+        self.view.addSubview(searchButton)
         
     }
 
@@ -151,6 +161,7 @@ override func didReceiveMemoryWarning() {
         
         
         cell.deleteButton.addTarget(self, action: #selector(onClickDeleteButton(sender:)), for: .touchUpInside)
+        
         cell.changeButton.addTarget(self, action: #selector(onClickChangeButton(sender:)), for: .touchUpInside)
         //イベントをつける
         
@@ -166,18 +177,56 @@ override func didReceiveMemoryWarning() {
       }
     
     //ボタンイベント(追加)
-    @objc internal func onClickAppendButton(sender: UIButton){
+    @objc internal func onClickAppendButton(sender: UIButton) {
         print("onClickAppendButton:")
         tickets.append(Human(name:myNameField.text!, age:Int(myAgeField.text!)!, image:"donutAndCoffee.png"))
+        print(tickets)
+        
     }
     
     //ボタンイベント(更新)
-    @objc internal func onClickUpdateButton(sender: UIButton){
+    @objc internal func onClickUpdateButton(sender: UIButton) {
         print("onClickUpdateButton")
         print(sender.tag)
         if selectedRow != nil {
             tickets[selectedRow!].name = "\(myNameField.text!)"
             tickets[selectedRow!].age = Int(myAgeField.text!)!
+        }
+    }
+    
+    //ボタンイベント（検索）
+    @objc internal func onClickSearchButton(sender:UIButton) {
+        print("onClickSearchButton")
+        
+        if myNameField.text!.isEmpty == false && myAgeField.text!.isEmpty == false {
+            let searchValue = tickets.filter {
+                ($0.name).contains("\(myNameField.text!)") && $0.age == Int(myAgeField.text!)
+            }
+            if (searchValue.count) >= 1 {
+                print(searchValue)
+            }else {
+                print("Not exist")
+            }
+        }else if myNameField.text!.isEmpty == false &&  myAgeField.text!.isEmpty {
+            let searchName = tickets.filter {
+                ($0.name).contains("\(myNameField.text!)")
+            }
+            if (searchName.count) >= 1 {
+                print(searchName)
+            }else {
+                print("Not exist")
+            }
+        }else if myNameField.text!.isEmpty && myAgeField.text!.isEmpty == false {
+            let searchAge = tickets.filter {
+                $0.age == Int(myAgeField.text!)
+            }
+            if (searchAge.count) >= 1 {
+                print(searchAge)
+            }else {
+                print("Not exist")
+            }
+        }else {
+            print("Not exist")
         }
     }
     
