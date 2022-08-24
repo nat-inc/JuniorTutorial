@@ -33,6 +33,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let s3 = ShareInfoDTO(shareTime:"2022.01.01 12:00", shareUser:"saburo")
         shareInfo = [s1, s2, s3]
         setupViews()
+        
+        //データがない場合のUILabel
+        let bWidth: CGFloat = 200
+        let bHeight: CGFloat = 50
+        
+        let posX: CGFloat = self.view.frame.width/2 - bWidth/2
+        let posY: CGFloat = self.view.frame.height/2 - bHeight/2
+        
+        let label: UILabel = UILabel(frame: CGRect(x: posX, y: posY, width: bWidth, height: bHeight))
+        label.text = "データがありません"
+        label.textAlignment = NSTextAlignment.center
+        
+        if shareInfo.count == 0 {
+            self.view.addSubview(label)
+        }
+        
     }
     
     @objc internal func onClickBackButton(sender: UIButton) {
@@ -124,4 +140,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.setCell(number:"\(cell.tag)", time: shareInfo[indexPath.row].shareTime, user: shareInfo[indexPath.row].shareUser)
         return cell
     }
+    
+
+    
 }
