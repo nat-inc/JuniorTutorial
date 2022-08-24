@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Learning-FaboSwiftDocs2
+//  Learning-FaboSwiftDocs3
 //
-//  Created by 小室沙央里 on 2022/08/22.
+//  Created by 小室沙央里 on 2022/08/23.
 //
 
 import UIKit
@@ -10,8 +10,22 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    var window: UIWindow?
+
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         // Override point for customization after application launch.
+        
+        // ViewControllerを生成
+        let myFirstViewController: FirstViewController = FirstViewController()
+        
+        // myFirstViewControllerをrootViewに設定し、Navigation Controllerを生成
+        let myNavigationController: UINavigationController = UINavigationController(rootViewController: myFirstViewController)
+        
+        // rootViewControllerにNavigationControllerを設定
+        self.window?.rootViewController = myNavigationController
+        
+        // NavigationControllerを表示
+        self.window?.makeKeyAndVisible()
         
         return true
     }
