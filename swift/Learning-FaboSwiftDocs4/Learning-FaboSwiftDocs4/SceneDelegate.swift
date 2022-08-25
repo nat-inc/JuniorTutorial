@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Learning-FaboSwiftDocs3
+//  Learning-FaboSwiftDocs4
 //
-//  Created by 小室沙央里 on 2022/08/23.
+//  Created by 小室沙央里 on 2022/08/24.
 //
 
 import UIKit
@@ -23,19 +23,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
               window = UIWindow(windowScene: windowScene)
             }
 
-            window?.frame = (windowScene?.coordinateSpace.bounds)!
-
-            // ViewControllerを生成
-            let myFirstViewController: FirstViewController = FirstViewController()
-
-            // myFirstViewControllerをrootviewに設定し、Navication Controllerを生成する.
-            let myNavigationController: UINavigationController = UINavigationController(rootViewController: myFirstViewController)
+        window?.frame = (windowScene?.coordinateSpace.bounds)!
         
-            // rootViewControllerにNavigationControllerを設定
-            window?.rootViewController = myNavigationController
-
-            // NavigationControllerを表示
-            window?.makeKeyAndVisible()
+        // Tabに設定するViewControllerのインスタンスを生成
+        let myFirstTab: UIViewController = FirstViewController()
+        let mySecondTab: UIViewController = SecondViewController()
+        
+        // タブを要素に持つArrayを作成する
+        let myTabs = NSArray(objects: myFirstTab, mySecondTab)
+        
+        // UITabContollerを設定する
+        let myTabBarController: UITabBarController = UITabBarController()
+        
+        // ViewControllerを設定する
+        myTabBarController.setViewControllers(myTabs as? [UIViewController], animated: false)
+        
+        // RootViewControllerに設定する
+        window?.rootViewController = myTabBarController
+        
+        // Windowを表示する
+        window?.makeKeyAndVisible()
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }
