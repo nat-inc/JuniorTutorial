@@ -3,14 +3,17 @@
 //  Learning-FaboSwiftDocs4
 //
 //  Created by 小室沙央里 on 2022/08/24.
-//
+// ①UITabBarControllerでタブの表示(First)
+// ②UIImageViewで画像を表示
+// ③UIScrollViewの表示(Second)
+// ④UITextViewで複数行のテキストの表示(First)
 
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
+    // ①
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -28,9 +31,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Tabに設定するViewControllerのインスタンスを生成
         let myFirstTab: UIViewController = FirstViewController()
         let mySecondTab: UIViewController = SecondViewController()
+        let myThirdTab: UIViewController = ThirdViewController()
         
         // タブを要素に持つArrayを作成する
-        let myTabs = NSArray(objects: myFirstTab, mySecondTab)
+        let myTabs = NSArray(objects: myFirstTab, mySecondTab, myThirdTab)
         
         // UITabContollerを設定する
         let myTabBarController: UITabBarController = UITabBarController()

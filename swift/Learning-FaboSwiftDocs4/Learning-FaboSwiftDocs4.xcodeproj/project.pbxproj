@@ -15,6 +15,9 @@
 		220CD1B728B5FA4500F67BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220CD1B528B5FA4500F67BE6 /* LaunchScreen.storyboard */; };
 		22D6155128B6037400FF6B52 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6155028B6037400FF6B52 /* SecondViewController.swift */; };
 		22D6155328B759B800FF6B52 /* donutAndCoffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 22D6155228B759B800FF6B52 /* donutAndCoffee.png */; };
+		22D6155528B899D700FF6B52 /* temple.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 22D6155428B899D600FF6B52 /* temple.jpeg */; };
+		22D6155728B8B38E00FF6B52 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D6155628B8B38E00FF6B52 /* ThirdViewController.swift */; };
+		22D6155928B8B45600FF6B52 /* IMG_7572.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 22D6155828B8B45600FF6B52 /* IMG_7572.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		220CD1B828B5FA4500F67BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22D6155028B6037400FF6B52 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		22D6155228B759B800FF6B52 /* donutAndCoffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = donutAndCoffee.png; sourceTree = "<group>"; };
+		22D6155428B899D600FF6B52 /* temple.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = temple.jpeg; sourceTree = "<group>"; };
+		22D6155628B8B38E00FF6B52 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		22D6155828B8B45600FF6B52 /* IMG_7572.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7572.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +50,7 @@
 		220CD19E28B5FA4400F67BE6 = {
 			isa = PBXGroup;
 			children = (
+				22D6155628B8B38E00FF6B52 /* ThirdViewController.swift */,
 				220CD1A928B5FA4400F67BE6 /* Learning-FaboSwiftDocs4 */,
 				220CD1A828B5FA4400F67BE6 /* Products */,
 			);
@@ -67,6 +74,8 @@
 				220CD1B028B5FA4400F67BE6 /* Main.storyboard */,
 				220CD1B328B5FA4500F67BE6 /* Assets.xcassets */,
 				220CD1B528B5FA4500F67BE6 /* LaunchScreen.storyboard */,
+				22D6155828B8B45600FF6B52 /* IMG_7572.jpeg */,
+				22D6155428B899D600FF6B52 /* temple.jpeg */,
 				22D6155228B759B800FF6B52 /* donutAndCoffee.png */,
 				220CD1B828B5FA4500F67BE6 /* Info.plist */,
 			);
@@ -131,7 +140,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D6155928B8B45600FF6B52 /* IMG_7572.jpeg in Resources */,
 				220CD1B728B5FA4500F67BE6 /* LaunchScreen.storyboard in Resources */,
+				22D6155528B899D700FF6B52 /* temple.jpeg in Resources */,
 				220CD1B428B5FA4500F67BE6 /* Assets.xcassets in Resources */,
 				22D6155328B759B800FF6B52 /* donutAndCoffee.png in Resources */,
 				220CD1B228B5FA4400F67BE6 /* Main.storyboard in Resources */,
@@ -147,6 +158,7 @@
 			files = (
 				22D6155128B6037400FF6B52 /* SecondViewController.swift in Sources */,
 				220CD1AF28B5FA4400F67BE6 /* ViewController.swift in Sources */,
+				22D6155728B8B38E00FF6B52 /* ThirdViewController.swift in Sources */,
 				220CD1AB28B5FA4400F67BE6 /* AppDelegate.swift in Sources */,
 				220CD1AD28B5FA4400F67BE6 /* SceneDelegate.swift in Sources */,
 			);
