@@ -5,11 +5,13 @@
 //  Created by 小室沙央里 on 2022/08/29.
 //  ①UIPageControlの表示
 //  ②UISwitchの表示
+//  ③UIDatePickerの表示
+//  ④UIActivityIndicatorの表示
 
 
 import UIKit
 
-class ViewController: UIViewController, UIScrollViewDelegate {
+class ViewController: UIViewController, UIScrollViewDelegate, UIPickerViewDelegate {
 
     // ①
     private var pageControl: UIPageControl!
@@ -18,6 +20,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // ②
     private var myLabel: UILabel!
     
+    // ③
+    private var myTextField: UITextField!
+    
+    // ④
+    private var myActivityIndicator: UIActivityIndicatorView!
+    private var myButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +36,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         self.view.backgroundColor = UIColor.cyan
         
-        // ① ScrollViewを取得
+        // ①
+        // ScrollViewを取得
         scrollView = UIScrollView(frame: self.view.frame)
         
         // ページ数を定義
@@ -51,9 +60,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         // ページ数分ボタンを生成する
         for i in 0 ..< pageSize {
-            
             // ページごとに異なるラベルを生成
-            let myLabel: UILabel = UILabel(frame: CGRect(x: CGFloat(i) * width + width/2 - 40, y: height/2 - 40, width: 80, height: 80))
+            let myLabel: UILabel = UILabel(frame: CGRect(x: CGFloat(i) * width + width/2 + 50, y: height/2 - 40, width: 80, height: 80))
             myLabel.backgroundColor = UIColor.black
             myLabel.textColor = UIColor.white
             myLabel.textAlignment = NSTextAlignment.center
@@ -79,8 +87,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         self.view.addSubview(pageControl)
         
-        
-        // ② Swicthを作成
+        // ②
+        // Swicthを作成
         let mySwicth: UISwitch = UISwitch()
         mySwicth.layer.position = CGPoint(x: self.view.frame.width/2, y: self.view.frame.height - 500)
         
@@ -90,7 +98,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // SwitchをOnに設定する
         mySwicth.isOn = true
         
-//         SwitchのOn/Off切り替わりの際に、呼ばれるイベントを設定
+        // SwitchのOn/Off切り替わりの際に、呼ばれるイベントを設定
         mySwicth.addTarget(self, action: #selector(ViewController.onClickMySwitch(sender:)), for: UIControl.Event.valueChanged)
        
         self.view.addSubview(mySwicth)
@@ -109,15 +117,62 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         
         self.view.addSubview(myLabel)
         
-    
+        // ③
+        // DatePickerを生成
+        let myDatePicker: UIDatePicker = UIDatePicker()
+        
+        // DataPickerを設定（デフォルトでは位置は画面上部）する
+        myDatePicker.frame = CGRect(x: 0, y:480, width: self.view.frame.width, height: 200)
+        myDatePicker.timeZone = NSTimeZone.local
+        myDatePicker.backgroundColor = UIColor.white
+        myDatePicker.layer.cornerRadius = 5.0
+        myDatePicker.layer.shadowOpacity = 0.5
+        
+        // 値が変わった際のイベント登録
+        myDatePicker.addTarget(self, action: #selector(ViewController.onDidChangeDate(sender:)), for: .valueChanged)
+        
+        self.view.addSubview(myDatePicker)
+        
+        // UITextFieldを作成
+        myTextField = UITextField(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
+        myTextField.text = ""
+        myTextField.borderStyle = UITextField.BorderStyle.roundedRect
+        myTextField.layer.position = CGPoint(x: self.view.bounds.width/2, y: self.view.bounds.height - 130)
+        
+        self.view.addSubview(myTextField)
+        
+        // ④
+        // インジケータを作成
+        myActivityIndicator = UIActivityIndicatorView()
+        myActivityIndicator.frame = CGRect(x:0, y:0, width: 50, height: 50)
+        myActivityIndicator.center = self.view.center
+        
+        // アニメーションが停止している時もインジケータを表示させる
+        myActivityIndicator.hidesWhenStopped = false
+        myActivityIndicator.style = UIActivityIndicatorView.Style.white
+        
+        // アニメーションを開始
+        myActivityIndicator.stopAnimating()
+        
+        self.view.addSubview(myActivityIndicator)
+        
+        myButton = UIButton(frame: CGRect(x:0, y:0, width: 60, height: 60))
+        myButton.backgroundColor = UIColor.red
+        myButton.layer.masksToBounds = true
+        myButton.layer.cornerRadius = 30.0
+        myButton.setTitle("Stop", for: .normal)
+        myButton.layer.position = CGPoint(x: self.view.bounds.width/4, y: self.view.bounds.height/2)
+        myButton.addTarget(self, action: #selector(ViewController.onClickMyButton(sender:)), for: .touchUpInside)
+        
+        self.view.addSubview(myButton)
 }
+
     
     // ①
     @objc internal func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         
         // スクロール数が1ページ分になった時
         if fmod(scrollView.contentOffset.x, scrollView.frame.maxX) == 0 {
-            
             //ページの場所を切り替える
             pageControl.currentPage = Int(scrollView.contentOffset.x / scrollView.frame.maxX)
         }
@@ -133,6 +188,33 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             myLabel.text = "Off"
             myLabel.backgroundColor = UIColor.gray
         }
+    }
+    
+    // ③
+    @objc internal func onDidChangeDate(sender: UIDatePicker) {
+        //フォーマット作成
+        let myDateFormatter: DateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy/MM/dd hh:mm"
+        
+        // 日付をフォーマットに沿って取得
+        let mySelectedDate: NSString = myDateFormatter.string(from: sender.date) as NSString
+        myTextField.text = mySelectedDate as String
+    }
+    
+    // ④
+    @objc internal func onClickMyButton(sender: UIButton) {
+        
+        if myActivityIndicator.isAnimating {
+            myActivityIndicator.stopAnimating()
+            myButton.setTitle("Start", for: .normal)
+            myButton.backgroundColor = UIColor.blue
+        }
+        else {
+            myActivityIndicator.startAnimating()
+            myButton.setTitle("Stop", for: .normal)
+            myButton.backgroundColor = UIColor.red
+        }
+        
     }
     
     override func didReceiveMemoryWarning() {
