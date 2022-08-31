@@ -3,7 +3,7 @@
 //  Learning-FaboSwiftDocs3
 //
 //  Created by 小室沙央里 on 2022/08/24.
-//
+//  UINavigationControllerの表示
 
 import UIKit
 
