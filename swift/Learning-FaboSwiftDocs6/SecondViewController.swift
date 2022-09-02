@@ -72,6 +72,7 @@ class SecondViewController: UIViewController {
         
         // Closeボタンを生成
         myWindowButton.frame = CGRect(x:0, y:0, width: 100, height: 60)
+        myWindowButton.backgroundColor = UIColor.orange
         myWindowButton.layer.position = CGPoint(x:self.myWindow.frame.width/2, y:self.myWindow.frame.height-50)
         myWindowButton.setTitle("Close", for: .normal)
         myWindowButton.setTitleColor(UIColor.white, for: .normal)
@@ -91,6 +92,12 @@ class SecondViewController: UIViewController {
         
         self.myWindow.addSubview(myTextView)
         
+        // UIWindowに必要（new）
+        if #available(iOS 13.0, *) {
+            if let currentWindowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                myWindow.windowScene = currentWindowScene
+            }
+        }
     }
 
     @objc internal func onClickMyButton2(sender: UIButton) {
