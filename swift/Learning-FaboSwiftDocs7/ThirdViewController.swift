@@ -10,8 +10,7 @@
 // ⑤UIAlertControllerでActionSheet表示
 // ⑥UIMenuControllerにMenuItemを追加
 // ⑦UIViewにBlurエフェクトを適用させる
-// ⑧UIViewにUIMotionEffectを追加
-
+// ⑧UIViewにUIMotionEffectを追加--?--
 import UIKit
 
 class ThirdViewController: UIViewController {

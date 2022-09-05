@@ -9,6 +9,8 @@
 // ④UINavigationItemでUINavigationBarを設定
 // ⑤UIAlertControllerでActionSheet表示
 // ⑥UIMenuControllerにMenuItemを追加
+// ⑦UIViewにBlurエフェクトを適用させる
+// ⑧UIViewにUIMotionEffectを追加--?--
 
 import UIKit
 
@@ -36,6 +38,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         myAlert.addAction(myAction_1)
         myAlert.addAction(myAction_2)
         myAlert.addAction(myAction_3)
+        
+        //--------------------iPadのクラッシュを防ぐために必須-------------
+        myAlert.popoverPresentationController?.sourceView = self.view
+        let screenSize = UIScreen.main.bounds
+        myAlert.popoverPresentationController?.sourceRect = CGRect(x: screenSize.size.width/2, y: screenSize.size.height, width: 0, height: 0)
+        //--------------------iPadのクラッシュを防ぐために必須-------------
         
         self.present(myAlert, animated: true, completion: nil)
     }
@@ -72,8 +80,9 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         let myMenuItem_1: UIMenuItem = UIMenuItem(title: "Menu1", action: #selector(SecondViewController.onMenu1(sender:)))
         let myMenuItem_2: UIMenuItem = UIMenuItem(title: "Menu2", action: #selector(SecondViewController.onMenu2(sender:)))
         let myMenuItem_3: UIMenuItem = UIMenuItem(title: "Menu3", action: #selector(SecondViewController.onMenu3(sender:)))
-        
+       
         let myMenuItems: NSArray = [myMenuItem_1, myMenuItem_2, myMenuItem_3]
+        
         
         myMenuController.menuItems = myMenuItems as? [UIMenuItem]
         
