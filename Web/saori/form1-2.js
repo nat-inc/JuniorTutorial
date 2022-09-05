@@ -66,12 +66,7 @@ $(function(){
             }
         });
         
-        if(checkErrors.indexOf(true) > -1){
-            return false;
-        }else{
-            return true;
-        }
-        
+        return !(checkErrors.indexOf(true) > -1)
     };
 
     //CHK
