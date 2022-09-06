@@ -4,6 +4,12 @@
 //
 //  Created by 小室沙央里 on 2022/09/05.
 //
+// ①UIViewにトランジションをつける(ViewController)
+// ②タッチイベントの有効/無効を切り替える(ViewController)
+// ③GestureRecognizerのイベント取得(SecondViewController)
+// ④UIAlertControllerをパスワード形式にする(ThirdViewController)
+// ⑤UIAlertControllerで文字数制限を設ける（ThirdViewController）
+// ⑥TableViewのボタンの拡張(FourthViewController)
 
 import UIKit
 
@@ -16,6 +22,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        let windowScene = scene as? UIWindowScene
+        
+        if let windowScene = windowScene {
+            window = UIWindow(windowScene: windowScene)
+        }
+        
+        window?.frame = (windowScene?.coordinateSpace.bounds)!
+        
+        let myViewController = ViewController()
+        let myNavigationController: UINavigationController = UINavigationController(rootViewController: myViewController)
+        
+        window?.rootViewController = myNavigationController
+        
+        window?.makeKeyAndVisible()
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

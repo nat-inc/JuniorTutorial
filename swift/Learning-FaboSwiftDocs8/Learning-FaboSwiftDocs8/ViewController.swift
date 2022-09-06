@@ -4,14 +4,17 @@
 //
 //  Created by 小室沙央里 on 2022/09/05.
 //
-// ①UIViewにトランジションをつける
-// ②タッチイベントの有効/無効を切り替える
-
+// ①UIViewにトランジションをつける(ViewController)
+// ②タッチイベントの有効/無効を切り替える(ViewController)
+// ③GestureRecognizerのイベント取得(SecondViewController)
+// ④UIAlertControllerをパスワード形式にする(ThirdViewController)
+// ⑤UIAlertControllerで文字数制限を設ける（ThirdViewController）
+// ⑥TableViewのボタンの拡張(FourthViewController)
 
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     // ①
     private var myView: UIView!
     private var myButton: UIButton!
@@ -30,8 +33,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        self.title = "My First View"
         self.view.backgroundColor = UIColor.cyan
         
+        let buttonWidth: CGFloat = 100
+        let buttonHeight: CGFloat = 50
+        let posX: CGFloat = (self.view.bounds.width - buttonWidth)/2
+        let posY: CGFloat = 600
+        
+        let naviButton = UIButton(frame: CGRect(x:posX, y:posY, width: buttonWidth, height: buttonHeight))
+        naviButton.backgroundColor = UIColor.orange
+        naviButton.layer.masksToBounds = true
+        naviButton.layer.cornerRadius = 20.0121112
+        naviButton.setTitle("Next", for: .normal)
+        naviButton.addTarget(self, action: #selector(ViewController.onClickNaviButton(sender:)), for: .touchUpInside)
+        self.view.addSubview(naviButton)
+    
         // ①
         // myViewを生成
         myView = UIView(frame: self.view.frame)
@@ -76,7 +93,7 @@ class ViewController: UIViewController {
         self.view.addSubview(myButton_2)
         
     }
-
+    
     // ①
     @objc internal func onClickMyButton(sender: UIButton) {
         
@@ -197,8 +214,13 @@ class ViewController: UIViewController {
         }
     }
     
-//
-//    override func didReceiveMemoryWarning() {
-//        super.didReceiveMemoryWarning()
-//    }
+    @objc internal func onClickNaviButton(sender: UIButton) {
+        
+        let secondViewController = SecondViewController()
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
