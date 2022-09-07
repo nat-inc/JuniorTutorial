@@ -10,6 +10,9 @@
 // ④UIAlertControllerをパスワード形式にする(ThirdViewController)
 // ⑤UIAlertControllerで文字数制限を設ける（ThirdViewController）
 // ⑥TableViewのボタンの拡張(FourthViewController)
+// ⑦UITableViewをSlideさせる(FifthViewController)
+// ⑧UITableViewに追加・削除機能を追加(SixthViewController)
+
 
 import UIKit
 
