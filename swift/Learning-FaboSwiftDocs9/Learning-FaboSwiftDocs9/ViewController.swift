@@ -4,6 +4,7 @@
 //
 //  Created by 小室沙央里 on 2022/09/07.
 // ①セカンドScreenへの描画(ViewController)　※iPhoneの実機buildできないため実装未確認（iPadはできる）
+// ②周期の違うUIScrollViewを同期させる(SecondViewController)
 
 import UIKit
 
@@ -13,6 +14,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let buttonWidth: CGFloat = 100
+        let buttonHeight: CGFloat = 50
+        let posX: CGFloat = (self.view.bounds.width - buttonWidth)/2
+        let posY: CGFloat = 600
+        
+        let naviButton = UIButton(frame: CGRect(x:posX, y:posY, width: buttonWidth, height: buttonHeight))
+        naviButton.backgroundColor = UIColor.orange
+        naviButton.layer.masksToBounds = true
+        naviButton.layer.cornerRadius = 20.0121112
+        naviButton.setTitle("Next", for: .normal)
+        naviButton.addTarget(self, action: #selector(ViewController.onClickNaviButton(sender:)), for: .touchUpInside)
+        self.view.addSubview(naviButton)
     
         let screen: NSArray = UIScreen.screens as NSArray
         
@@ -90,6 +104,10 @@ class ViewController: UIViewController {
         
     }
     
+    @objc func onClickNaviButton(sender: UIButton) {
+        let secondViewController = SecondViewController()
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
     
 }
 
