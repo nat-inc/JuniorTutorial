@@ -14,6 +14,10 @@
 		229EAF8B28C86F7900F80745 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 229EAF8A28C86F7900F80745 /* Assets.xcassets */; };
 		229EAF8E28C86F7900F80745 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 229EAF8C28C86F7900F80745 /* LaunchScreen.storyboard */; };
 		22CFD5EF28C9613700D50DFF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CFD5EE28C9613700D50DFF /* SecondViewController.swift */; };
+		22EAEE6628C9B52800388E1C /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6528C9B52800388E1C /* ThirdViewController.swift */; };
+		22EAEE6828C9BC6500388E1C /* MyButton_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6728C9BC6500388E1C /* MyButton_2.swift */; };
+		22EAEE6A28C9CE7B00388E1C /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6928C9CE7B00388E1C /* FourthViewController.swift */; };
+		22EAEE6C28C9D10200388E1C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6B28C9D10200388E1C /* FifthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		229EAF8D28C86F7900F80745 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		229EAF8F28C86F7900F80745 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22CFD5EE28C9613700D50DFF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		22EAEE6528C9B52800388E1C /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		22EAEE6728C9BC6500388E1C /* MyButton_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton_2.swift; sourceTree = "<group>"; };
+		22EAEE6928C9CE7B00388E1C /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		22EAEE6B28C9D10200388E1C /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +50,10 @@
 		229EAF7528C86F7700F80745 = {
 			isa = PBXGroup;
 			children = (
+				22EAEE6B28C9D10200388E1C /* FifthViewController.swift */,
+				22EAEE6928C9CE7B00388E1C /* FourthViewController.swift */,
+				22EAEE6728C9BC6500388E1C /* MyButton_2.swift */,
+				22EAEE6528C9B52800388E1C /* ThirdViewController.swift */,
 				22CFD5EE28C9613700D50DFF /* SecondViewController.swift */,
 				229EAF8028C86F7700F80745 /* Learning-FaboSwiftDocs9 */,
 				229EAF7F28C86F7700F80745 /* Products */,
@@ -143,7 +155,11 @@
 			files = (
 				22CFD5EF28C9613700D50DFF /* SecondViewController.swift in Sources */,
 				229EAF8628C86F7700F80745 /* ViewController.swift in Sources */,
+				22EAEE6628C9B52800388E1C /* ThirdViewController.swift in Sources */,
+				22EAEE6A28C9CE7B00388E1C /* FourthViewController.swift in Sources */,
+				22EAEE6C28C9D10200388E1C /* FifthViewController.swift in Sources */,
 				229EAF8228C86F7700F80745 /* AppDelegate.swift in Sources */,
+				22EAEE6828C9BC6500388E1C /* MyButton_2.swift in Sources */,
 				229EAF8428C86F7700F80745 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -5,6 +5,9 @@
 //  Created by 小室沙央里 on 2022/09/08.
 // ①セカンドScreenへの描画(ViewController)　※iPhoneの実機buildできないため実装未確認（iPadはできる）
 // ②周期の違うUIScrollViewを同期させる(SecondViewController)
+// ③プルンプルンするButtonの作成(ThirdViewController)
+// ④カスタマイズButton(ThirdViewController, MyButton_2)
+// ⑤UIパーツの削除(FourthViewControllew)
 
 import UIKit
 
@@ -24,7 +27,7 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
         
         self.title = "My Second View"
         self.view.backgroundColor = UIColor.white
-
+        
         // ②
         // 画面サイズの取得
         let width = self.view.frame.maxX, height = self.view.frame.maxY
@@ -46,6 +49,19 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
         scrollViewMain.delegate = self
         scrollViewMain.contentSize = CGSize(width: CGFloat(pageSize) * width, height: 0)
         self.view.addSubview(scrollViewMain)
+        
+        let buttonWidth: CGFloat = 100
+        let buttonHeight: CGFloat = 50
+        let posX: CGFloat = (self.view.bounds.width - buttonWidth)/2
+        let posY: CGFloat = 600
+        
+        let naviButton = UIButton(frame: CGRect(x:posX, y:posY, width: buttonWidth, height: buttonHeight))
+        naviButton.backgroundColor = UIColor.orange
+        naviButton.layer.masksToBounds = true
+        naviButton.layer.cornerRadius = 20.0121112
+        naviButton.setTitle("Next", for: .normal)
+        naviButton.addTarget(self, action: #selector(SecondViewController.onClickNaviButton(sender:)), for: .touchUpInside)
+        scrollViewMain.addSubview(naviButton)
         
         // ScrollView1（真ん中の黒部分）に貼り付けるLabelの生成
         for i in 0 ..< pageSize {
@@ -111,4 +127,9 @@ class SecondViewController: UIViewController, UIScrollViewDelegate {
         }
     }
 
+    @objc func onClickNaviButton(sender: UIButton) {
+        let thirdViewController = ThirdViewController()
+        self.navigationController?.pushViewController(thirdViewController, animated: true)
+    }
+    
 }

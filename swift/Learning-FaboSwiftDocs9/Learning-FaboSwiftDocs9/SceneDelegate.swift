@@ -4,6 +4,11 @@
 //
 //  Created by 小室沙央里 on 2022/09/07.
 //
+// ①セカンドScreenへの描画(ViewController)　※iPhoneの実機buildできないため実装未確認（iPadはできる）
+// ②周期の違うUIScrollViewを同期させる(SecondViewController)
+// ③プルンプルンするButtonの作成(ThirdViewController)
+// ④カスタマイズButton(ThirdViewController, MyButton_2)
+// ⑤UIパーツの削除(FourthViewControllew)
 
 import UIKit
 
