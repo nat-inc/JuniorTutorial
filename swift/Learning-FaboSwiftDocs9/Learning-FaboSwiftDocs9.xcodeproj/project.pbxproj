@@ -18,6 +18,14 @@
 		22EAEE6828C9BC6500388E1C /* MyButton_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6728C9BC6500388E1C /* MyButton_2.swift */; };
 		22EAEE6A28C9CE7B00388E1C /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6928C9CE7B00388E1C /* FourthViewController.swift */; };
 		22EAEE6C28C9D10200388E1C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6B28C9D10200388E1C /* FifthViewController.swift */; };
+		22EAEE6E28CAC30500388E1C /* drawCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6D28CAC30500388E1C /* drawCircleView.swift */; };
+		22EAEE7028CACBBF00388E1C /* drawRectangleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE6F28CACBBF00388E1C /* drawRectangleView.swift */; };
+		22EAEE7228CAD22100388E1C /* drawLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE7128CAD22100388E1C /* drawLineView.swift */; };
+		22EAEE7428CAD82000388E1C /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE7328CAD82000388E1C /* SixthViewController.swift */; };
+		22EAEE7628CADC6D00388E1C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE7528CADC6D00388E1C /* SeventhViewController.swift */; };
+		22EAEE7828CADD6700388E1C /* CustomUICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE7728CADD6700388E1C /* CustomUICollectionViewCell.swift */; };
+		22EAEE7C28CAFB9000388E1C /* EighthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE7B28CAFB9000388E1C /* EighthViewController.swift */; };
+		22EAEE7E28CB030200388E1C /* CustomUICollectionViewCell_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEE7D28CB030200388E1C /* CustomUICollectionViewCell_2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,14 @@
 		22EAEE6728C9BC6500388E1C /* MyButton_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton_2.swift; sourceTree = "<group>"; };
 		22EAEE6928C9CE7B00388E1C /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		22EAEE6B28C9D10200388E1C /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
+		22EAEE6D28CAC30500388E1C /* drawCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawCircleView.swift; sourceTree = "<group>"; };
+		22EAEE6F28CACBBF00388E1C /* drawRectangleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawRectangleView.swift; sourceTree = "<group>"; };
+		22EAEE7128CAD22100388E1C /* drawLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawLineView.swift; sourceTree = "<group>"; };
+		22EAEE7328CAD82000388E1C /* SixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
+		22EAEE7528CADC6D00388E1C /* SeventhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
+		22EAEE7728CADD6700388E1C /* CustomUICollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell.swift; sourceTree = "<group>"; };
+		22EAEE7B28CAFB9000388E1C /* EighthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EighthViewController.swift; sourceTree = "<group>"; };
+		22EAEE7D28CB030200388E1C /* CustomUICollectionViewCell_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUICollectionViewCell_2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +66,15 @@
 		229EAF7528C86F7700F80745 = {
 			isa = PBXGroup;
 			children = (
+				22EAEE7B28CAFB9000388E1C /* EighthViewController.swift */,
+				22EAEE7528CADC6D00388E1C /* SeventhViewController.swift */,
+				22EAEE7728CADD6700388E1C /* CustomUICollectionViewCell.swift */,
+				22EAEE7D28CB030200388E1C /* CustomUICollectionViewCell_2.swift */,
 				22EAEE6B28C9D10200388E1C /* FifthViewController.swift */,
+				22EAEE6D28CAC30500388E1C /* drawCircleView.swift */,
+				22EAEE6F28CACBBF00388E1C /* drawRectangleView.swift */,
+				22EAEE7128CAD22100388E1C /* drawLineView.swift */,
+				22EAEE7328CAD82000388E1C /* SixthViewController.swift */,
 				22EAEE6928C9CE7B00388E1C /* FourthViewController.swift */,
 				22EAEE6728C9BC6500388E1C /* MyButton_2.swift */,
 				22EAEE6528C9B52800388E1C /* ThirdViewController.swift */,
@@ -154,12 +178,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				22CFD5EF28C9613700D50DFF /* SecondViewController.swift in Sources */,
+				22EAEE6E28CAC30500388E1C /* drawCircleView.swift in Sources */,
 				229EAF8628C86F7700F80745 /* ViewController.swift in Sources */,
+				22EAEE7228CAD22100388E1C /* drawLineView.swift in Sources */,
+				22EAEE7828CADD6700388E1C /* CustomUICollectionViewCell.swift in Sources */,
 				22EAEE6628C9B52800388E1C /* ThirdViewController.swift in Sources */,
+				22EAEE7E28CB030200388E1C /* CustomUICollectionViewCell_2.swift in Sources */,
+				22EAEE7028CACBBF00388E1C /* drawRectangleView.swift in Sources */,
 				22EAEE6A28C9CE7B00388E1C /* FourthViewController.swift in Sources */,
+				22EAEE7428CAD82000388E1C /* SixthViewController.swift in Sources */,
 				22EAEE6C28C9D10200388E1C /* FifthViewController.swift in Sources */,
 				229EAF8228C86F7700F80745 /* AppDelegate.swift in Sources */,
 				22EAEE6828C9BC6500388E1C /* MyButton_2.swift in Sources */,
+				22EAEE7C28CAFB9000388E1C /* EighthViewController.swift in Sources */,
+				22EAEE7628CADC6D00388E1C /* SeventhViewController.swift in Sources */,
 				229EAF8428C86F7700F80745 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

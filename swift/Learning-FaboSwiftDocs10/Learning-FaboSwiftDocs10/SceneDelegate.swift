@@ -1,25 +1,16 @@
 //
 //  SceneDelegate.swift
-//  Learning-FaboSwiftDocs9
+//  Learning-FaboSwiftDocs10
 //
-//  Created by 小室沙央里 on 2022/09/07.
+//  Created by 小室沙央里 on 2022/09/09.
 //
-// ①セカンドScreenへの描画(ViewController)
-// ②周期の違うUIScrollViewを同期させる(SecondViewController)
-// ③プルンプルンするButtonの作成(ThirdViewController)
-// ④カスタマイズButton(ThirdViewController, MyButton_2)
-// ⑤UIパーツの削除(FourthViewControllew)
-// ⑥UIBezierPathで図形を描画(FifthViewControllew)
-// ⑦UICollectionViewを使う(SixthViewControllew)
-// ⑧UICollectionViewのCellをカスタマイズ(SeventhViewControllew)
-// ⑨UICollectionViewをセクション毎に分ける(EighthViewControllew)
 
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
+    var myViewController: UIViewController?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -34,13 +25,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.frame = (windowScene?.coordinateSpace.bounds)!
         
-        let viewController:ViewController = ViewController()
+        let myViewController = ViewController()
         
-        let myNavigationController: UINavigationController = UINavigationController(rootViewController: viewController)
+        let myNavigationController: UINavigationController = UINavigationController(rootViewController: myViewController)
         
         window?.rootViewController = myNavigationController
         
         window?.makeKeyAndVisible()
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
 

@@ -3,11 +3,16 @@
 //  Learning-FaboSwiftDocs9
 //
 //  Created by 小室沙央里 on 2022/09/07.
-// ①セカンドScreenへの描画(ViewController)　※iPhoneの実機buildできないため実装未確認（iPadはできる）
+// ①セカンドScreenへの描画(ViewController)
 // ②周期の違うUIScrollViewを同期させる(SecondViewController)
 // ③プルンプルンするButtonの作成(ThirdViewController)
 // ④カスタマイズButton(ThirdViewController, MyButton_2)
 // ⑤UIパーツの削除(FourthViewControllew)
+// ⑥UIBezierPathで図形を描画(FifthViewControllew)
+// ⑦UICollectionViewを使う(SixthViewControllew)
+// ⑧UICollectionViewのCellをカスタマイズ(SeventhViewControllew)
+// ⑨UICollectionViewをセクション毎に分ける(EighthViewControllew)
+
 
 import UIKit
 

@@ -4,11 +4,15 @@
 //
 //  Created by 小室沙央里 on 2022/09/08.
 //
-// ①セカンドScreenへの描画(ViewController)　※iPhoneの実機buildできないため実装未確認（iPadはできる）
+// ①セカンドScreenへの描画(ViewController)
 // ②周期の違うUIScrollViewを同期させる(SecondViewController)
 // ③プルンプルンするButtonの作成(ThirdViewController)
 // ④カスタマイズButton(ThirdViewController, MyButton_2)
 // ⑤UIパーツの削除(FourthViewControllew)
+// ⑥UIBezierPathで図形を描画(FifthViewControllew)
+// ⑦UICollectionViewを使う(SixthViewControllew)
+// ⑧UICollectionViewのCellをカスタマイズ(SeventhViewControllew)
+// ⑨UICollectionViewをセクション毎に分ける(EighthViewControllew)
 
 import UIKit
 
@@ -45,17 +49,26 @@ class FourthViewController: UIViewController {
             }
         }
         // Do any additional setup after loading the view.
+        
+        let buttonWidth: CGFloat = 100
+        let buttonHeight: CGFloat = 50
+        let posX: CGFloat = (self.view.bounds.width - buttonWidth)/2
+        let posY: CGFloat = 600
+        
+        let naviButton = UIButton(frame: CGRect(x:posX, y:posY, width: buttonWidth, height: buttonHeight))
+        naviButton.backgroundColor = UIColor.orange
+        naviButton.layer.masksToBounds = true
+        naviButton.layer.cornerRadius = 20.0121112
+        naviButton.setTitle("Next", for: .normal)
+        naviButton.addTarget(self, action: #selector(FourthViewController.onClickNaviButton(sender:)), for: .touchUpInside)
+        self.view.addSubview(naviButton)
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func onClickNaviButton(sender: UIButton) {
+        let fifthViewController = FifthViewController()
+        self.navigationController?.pushViewController(fifthViewController, animated: true)
     }
-    */
+
 
 }
