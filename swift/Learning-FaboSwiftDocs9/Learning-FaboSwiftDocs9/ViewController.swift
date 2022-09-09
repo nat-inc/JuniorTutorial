@@ -105,6 +105,13 @@ class ViewController: UIViewController {
         myLabel.layer.position = CGPoint(x: self.mySecondWindow.bounds.width/2, y: 200)
         self.mySecondWindow.addSubview(myLabel)
         
+        // ？？ UIWindowに必要
+        if #available(iOS 13.0, *) {
+            if let currentWindowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                mySecondWindow.windowScene = currentWindowScene
+            }
+        }
+        
     }
     
     @objc func onClickNaviButton(sender: UIButton) {
