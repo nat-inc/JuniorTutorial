@@ -32,12 +32,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.frame = (windowScene?.coordinateSpace.bounds)!
         
+        // ViewControllerを生成
         let myViewController = ViewController()
         
+        // myViewControllerをrootviewに設定し、NavicationControllerを生成
         let myNavigationController: UINavigationController = UINavigationController(rootViewController: myViewController)
         
+        // rootViewControllerにNavigationControllerを設定
         window?.rootViewController = myNavigationController
         
+        // NavigationControllerを表示
         window?.makeKeyAndVisible()
         
         guard let _ = (scene as? UIWindowScene) else { return }

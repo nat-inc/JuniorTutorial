@@ -25,9 +25,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.frame = (windowScene?.coordinateSpace.bounds)!
         
-        let myViewController = ViewController()
+        myViewController = ViewController()
         
-        let myNavigationController: UINavigationController = UINavigationController(rootViewController: myViewController)
+        let myNavigationController = UINavigationController(rootViewController: myViewController!)
+        
+//        self.window = UIWindow(frame: UIScreen.main.bounds)
         
         window?.rootViewController = myNavigationController
         

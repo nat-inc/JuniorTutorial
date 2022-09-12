@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
+    
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>YES</string>
+    <key>NSAppleMusicUsageDescription</key>
+    <string>YES</string>
+    
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
