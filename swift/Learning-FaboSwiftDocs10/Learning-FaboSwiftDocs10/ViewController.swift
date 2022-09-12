@@ -3,7 +3,7 @@
 //  Learning-FaboSwiftDocs10
 //
 //  Created by 小室沙央里 on 2022/09/09.
-//
+// ① UIImagePickerControllerでライブラリから画像を選択
 
 import UIKit
 
@@ -47,7 +47,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         // 選択された画像を表示するViewControllerにセットする
         secondViewController.mySelectedImage = myImage as? UIImage
         
-        myImagePicker.pushViewController(secondViewController, animated: true)
+        // 以下の2行修正済
+        picker.dismiss(animated: true)
+        self.navigationController!.pushViewController(secondViewController, animated: true)
+        
+//        myImagePicker.pushViewController(secondViewController, animated: true)
         
     }
     

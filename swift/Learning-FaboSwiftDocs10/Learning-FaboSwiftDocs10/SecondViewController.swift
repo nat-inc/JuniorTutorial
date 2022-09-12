@@ -3,7 +3,7 @@
 //  Learning-FaboSwiftDocs10
 //
 //  Created by 小室沙央里 on 2022/09/09.
-//
+// ① UIImagePickerControllerでライブラリから画像を選択
 
 import UIKit
 
