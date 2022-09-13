@@ -20,6 +20,7 @@
 		22EAEECA28CEEB4C00388E1C /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEEC928CEEB4C00388E1C /* FourthViewController.swift */; };
 		22EAEECC28CEF34000388E1C /* FifthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEECB28CEF34000388E1C /* FifthViewController.swift */; };
 		22EAEECE28CEFE4D00388E1C /* SixthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEECD28CEFE4D00388E1C /* SixthViewController.swift */; };
+		22EAEED028D00F9F00388E1C /* SeventhViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EAEECF28D00F9F00388E1C /* SeventhViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		22EAEEC928CEEB4C00388E1C /* FourthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 		22EAEECB28CEF34000388E1C /* FifthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FifthViewController.swift; sourceTree = "<group>"; };
 		22EAEECD28CEFE4D00388E1C /* SixthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SixthViewController.swift; sourceTree = "<group>"; };
+		22EAEECF28D00F9F00388E1C /* SeventhViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeventhViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				22EAEEAD28CEB4A000388E1C /* AppDelegate.swift */,
 				22EAEEAF28CEB4A000388E1C /* SceneDelegate.swift */,
+				22EAEECF28D00F9F00388E1C /* SeventhViewController.swift */,
 				22EAEEB128CEB4A000388E1C /* ViewController.swift */,
 				22EAEECD28CEFE4D00388E1C /* SixthViewController.swift */,
 				22EAEECB28CEF34000388E1C /* FifthViewController.swift */,
@@ -163,6 +166,7 @@
 			files = (
 				22EAEECA28CEEB4C00388E1C /* FourthViewController.swift in Sources */,
 				22EAEEC428CEBA2C00388E1C /* SecondViewController.swift in Sources */,
+				22EAEED028D00F9F00388E1C /* SeventhViewController.swift in Sources */,
 				22EAEEB228CEB4A000388E1C /* ViewController.swift in Sources */,
 				22EAEECE28CEFE4D00388E1C /* SixthViewController.swift in Sources */,
 				22EAEEC628CECEE900388E1C /* ThirdViewController.swift in Sources */,

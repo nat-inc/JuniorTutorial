@@ -14,6 +14,7 @@
 // ⑧UIViewに重力を適用させる(SixthViewController)
 // ⑨UIViewをスナップさせる(SixthViewController)
 // ⑩UIviewを動的に動かす(SixthViewController)
+// 11. UIViewアニメーションまとめ(SeventhViewController)
 
 import UIKit
 
@@ -35,7 +36,7 @@ class FifthViewController: UIViewController {
         naviButton.layer.masksToBounds = true
         naviButton.layer.cornerRadius = 20.0
         naviButton.setTitle("ボタン", for: .normal)
-        naviButton.addTarget(self, action: #selector(FourthViewController.onClickNaviButton(sender:)), for: .touchUpInside)
+        naviButton.addTarget(self, action: #selector(FifthViewController.onClickNaviButton(sender:)), for: .touchUpInside)
         self.view.addSubview(naviButton)
         
         let myButton = UIButton(frame: CGRect(x:0, y:0, width: 200, height: 40))

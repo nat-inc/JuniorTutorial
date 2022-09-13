@@ -13,6 +13,7 @@
 // ⑧UIViewに重力を適用させる(SixthViewController)
 // ⑨UIViewをスナップさせる(SixthViewController)
 // ⑩UIviewを動的に動かす(SixthViewController)
+// 11. UIViewアニメーションまとめ(SeventhViewController)
 
 
 
