@@ -4,6 +4,12 @@
 //
 //  Created by 小室沙央里 on 2022/09/13.
 //
+// ①一つのボタンから複数のボタンが飛び出す(ViewController, MyCustomButton)
+// ②ドラッグでViewを移動させる(SecondViewController)
+// ③モーダル表示させる(SecondViewController, ThirdViewController)
+// ④現Viewの上に別Viewを表示する(FourthViewController)
+// ⑤UIViewに当たり判定を適用させる(ThirdViewController)
+// ⑥UIPopoverControllerを使ってViewをポップさせる(iPad専用)(FourthViewController)
 
 import Foundation
 import UIKit

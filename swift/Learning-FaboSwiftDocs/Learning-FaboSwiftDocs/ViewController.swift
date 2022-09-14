@@ -5,6 +5,9 @@
 //  Created by 小室沙央里 on 2022/08/19.
 //  UILabel --->
 
+// ①UIFontで文字を表示
+// ②UserNotificationを表示
+
 import UIKit
 
 class ViewController: UIViewController {

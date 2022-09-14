@@ -6,12 +6,17 @@
 //
 // ①一つのボタンから複数のボタンが飛び出す(ViewController, MyCustomButton)
 // ②ドラッグでViewを移動させる(SecondViewController)
-// ③モーダル表示させる(ThirdViewController)
+// ③モーダル表示させる(SecondViewController, ThirdViewController)
+// ④現Viewの上に別Viewを表示する(FourthViewController)
+// ⑤UIViewに当たり判定を適用させる(ThirdViewController)
+// ⑥UIPopoverControllerを使ってViewをポップさせる(iPad専用)(FourthViewController)
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
     
+    // ①
     var mainButton: UIButton = UIButton()
 
     override func viewDidLoad() {
@@ -19,10 +24,9 @@ class ViewController: UIViewController {
       
         self.view.backgroundColor = UIColor.white
 
-        // PopButton生成
         let naviButton = UIButton()
         naviButton.frame = CGRect(x:0, y:0, width: 100, height: 50)
-        naviButton.layer.position = CGPoint(x: self.view.bounds.width/2, y:self.view.bounds.height-50)
+        naviButton.layer.position = CGPoint(x: self.view.bounds.width/2, y:self.view.bounds.height-100)
         naviButton.backgroundColor = UIColor.green
         naviButton.layer.masksToBounds = true
         naviButton.layer.cornerRadius = 20.0
@@ -56,4 +60,3 @@ class ViewController: UIViewController {
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
 }
-
